@@ -9,3 +9,5 @@ struct Node {
 	struct Node* left;
 	struct Node* right;
 };
+
+struct node* tree(struct Node n);
