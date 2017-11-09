@@ -4,10 +4,15 @@
 
 -------------------------------------------------------------------------------------*/
 
+#ifndef TREE_H
+#define TREE_H
+
 struct Node {
 	int data;
 	struct Node* left;
 	struct Node* right;
 };
 
-struct node* tree(struct Node n);
+struct Node* tree(struct Node n);
+
+#endif
