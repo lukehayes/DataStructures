@@ -9,6 +9,6 @@ set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
 include_directories("${INCLUDE_DIR}")
 
 add_executable(app
-	# "${INCLUDE_DIR}/shader.h"
- #    "${SRC_DIR}/shader.c"
+	"${INCLUDE_DIR}/tree.h"
+    "${SRC_DIR}/tree.c"
 main.c)
