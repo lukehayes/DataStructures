@@ -1,5 +1,10 @@
 #include "tree.h"
+#include <stdio.h>
 
-struct node* tree(struct Node n ) {
-	
+struct Node* tree(struct Node n ) {
+	struct Node current = NULL;
+
+	if( current == NULL ) {
+		current = n;
+	}
 }
