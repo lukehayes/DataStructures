@@ -14,6 +14,8 @@ int main()
 	struct Node* n3 = malloc(sizeof(struct Node));
 	n3->data = 3;
 
+	tree(*n1);
+
 
 
 	free(n1);
