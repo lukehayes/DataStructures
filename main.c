@@ -5,9 +5,17 @@
 
 int main()
 {
-	struct Node* n1 = malloc(sizeof(struct Node));
+    struct Node* n1 = malloc(sizeof(struct Node));
+    n1->data = 100;
 
-	free(n1);
+    struct Node* n2 = malloc(sizeof(struct Node));
+    n2->data = 333;
+
+    tree(n1);
+
+
+    free(n1);
+	free(n2);
 
     return 0;
 }

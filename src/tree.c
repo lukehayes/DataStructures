@@ -3,13 +3,18 @@
 #include <stdio.h>
 
 struct Node* tree(struct Node* n ) {
-	struct Node* current = NULL;
+	struct Node* root = NULL;
 
-	if( current == 0 ) {
-		current = n;
-	}
+	if( root == 0 ) {
+		root = n;
+	}else {
 
-	printf("Current data: %i ", n->data);
+        while( (root++) ) 
+        {
+            printf("Finding...");
+        }
+    }
 
-	return current;
+
+	return root;
 }
