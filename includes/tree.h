@@ -7,6 +7,6 @@
 #ifndef TREE_H
 #define TREE_H
 
-struct Node* tree(struct Node n);
+struct Node* tree(struct Node* n);
 
 #endif
