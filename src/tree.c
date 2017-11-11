@@ -6,7 +6,7 @@ struct Node* tree(struct Node* n ) {
 	struct Node* current = NULL;
 
 	if( current == 0 ) {
-		current = &n;
+		current = n;
 	}
 
 	printf("Current data: %i ", n->data);
