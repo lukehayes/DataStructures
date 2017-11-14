@@ -11,5 +11,8 @@ include_directories("${INCLUDE_DIR}")
 add_executable(app
 	"${INCLUDE_DIR}/tree.h"
     "${SRC_DIR}/tree.c"
-	"${INCLUDE_DIR}/node.h"
+    "${INCLUDE_DIR}/node.h"
+    
+    "${INCLUDE_DIR}/linked-list.h"
+    "${SRC_DIR}/linked-list.c"
 main.c)
