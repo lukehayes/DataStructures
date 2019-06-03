@@ -13,6 +13,12 @@ public:
 	Node();
 	Node(int data);
 	~Node();
+
+	/**
+	 * Get the next node
+	 * @return [description]
+	 */
+	Node* getNext();
 private:
 	int data;
 	Node* next;

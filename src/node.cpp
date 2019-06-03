@@ -8,3 +8,7 @@ Node::Node(int data) :
 	data(data), next(nullptr)
 {}
 Node::~Node() {}
+
+Node* Node::getNext() {
+	return this->next;
+}
