@@ -20,7 +20,7 @@ set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/"
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Set the include directory
-INCLUDE_DIRECTORIES( ${INCLUDE_DIR} ${SDL2_INCLUDE_DIRS} )
+INCLUDE_DIRECTORIES( ${INCLUDE_DIR}  )
 
 # Subdirectories
 # add_subdirectory(src/game)
