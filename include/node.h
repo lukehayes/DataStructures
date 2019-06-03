@@ -25,8 +25,8 @@ public:
 	 * @param n [description]
 	 */
 	void setNext(Node* n);
-private:
 	int data;
+private:
 	Node* next;
 };
 
