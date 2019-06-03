@@ -11,7 +11,11 @@ class Node
 {
 public:
 	Node();
+	Node(int data);
 	~Node();
+private:
+	int data;
+	Node* next;
 };
 
 #endif
