@@ -12,3 +12,6 @@ Node::~Node() {}
 Node* Node::getNext() {
 	return this->next;
 }
+void Node::setNext(Node* n) {
+	this->next = n;
+}

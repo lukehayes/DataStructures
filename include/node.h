@@ -19,6 +19,12 @@ public:
 	 * @return [description]
 	 */
 	Node* getNext();
+
+	/**
+	 * Set the next Node
+	 * @param n [description]
+	 */
+	void setNext(Node* n);
 private:
 	int data;
 	Node* next;
