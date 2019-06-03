@@ -20,7 +20,7 @@ set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/"
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Set the include directory
-INCLUDE_DIRECTORIES( ${INCLUDE_DIR}  )
+INCLUDE_DIRECTORIES( "${INCLUDE_DIR}" )
 
 # Subdirectories
 # add_subdirectory(src/game)
@@ -28,7 +28,7 @@ INCLUDE_DIRECTORIES( ${INCLUDE_DIR}  )
 # Example of adding a sub directory
 # add_subdirectory(src/math)
 
-ADD_EXECUTABLE(app main.cpp )
+ADD_EXECUTABLE(app main.cpp "${SOURCE_DIR}/node.cpp" )
 target_link_libraries( app )
 
 
