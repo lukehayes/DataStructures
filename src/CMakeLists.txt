@@ -1,4 +1,4 @@
 add_library(DS
-    linked-list.cpp
-    node.cpp
+    linked-list.c
+    node.c
 )
