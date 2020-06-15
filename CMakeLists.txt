@@ -16,9 +16,6 @@ set( SOURCE_DIR "${PROJECT_SOURCE_DIR}/src")
 # Modules Path
 set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-# Useful for some autocompletion plugins
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
 # Set the include directory
 include_directories( "${INCLUDE_DIR}" )
 
