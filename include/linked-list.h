@@ -7,6 +7,8 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
+#include "node.h"
+
 /**
  * Doubly Linked List
  */
