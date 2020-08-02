@@ -7,15 +7,15 @@
 
 #include <stdio.h>
 
-void ds_log(const char* msg) {
+void l(const char* msg) {
     printf("LOG: %s \n", msg);
 }
 
-void ds_logs(const char* str1, const char* str2) {
+void ls(const char* str1, const char* str2) {
     printf("LOG: %s:%s \n", str1, str2);
 }
 
-void ds_logi(const char* str1, int n) {
+void li(const char* str1, int n) {
     printf("LOG: %s:%i \n", str1, n);
 }
 
