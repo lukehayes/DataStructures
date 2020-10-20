@@ -44,23 +44,39 @@ void AddNode(List* list, int value) {
 
     Node* node = (Node*) malloc(sizeof(Node));
     node->value = value;
+    Node* current = list->head;
 
-    if(list->head == NULL) {
-        puts("Head is NULL so I will add Node to head.");
+
+    if(current == NULL) {
         list->head = node;
     }else {
-        puts("Head set so moving on...");
-        Node* head = list->head;
+        Node* next = current->next;
 
-        while(head == NULL) {
-            head = head->next++;
-            printf("Searching... Value: %i\n", head->value);
+        while(next != NULL)
+        {
+            printf("NUL? %i", next->value);
         }
-
-        head = node;
-            printf("Searching... Value: %i\n", head->value);
-        puts("Done");
     }
+}
+
+void PrintList(List* list)
+{
+    Node* current = list->head;
+
+    if(current == NULL)
+    {
+        printf("List is empty.");
+        return;
+    }
+
+    while( current != NULL )
+    {
+        static int i = 1;
+        printf("Node %i: %i", i, current->value);
+        i++;
+        current = current->next;
+    }
+
 }
 
 
