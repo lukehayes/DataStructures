@@ -47,7 +47,7 @@ void AddNode(List* list, int value) {
 
     if(list->head == NULL) {
         puts("Head is NULL so I will add Node to head.");
-        list->head = &node;
+        list->head = node;
     }else {
         puts("Head set so moving on...");
         Node* head = list->head;
