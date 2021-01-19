@@ -9,4 +9,6 @@ typedef struct List {
     int size;
 } List;
 
+List* createList();
+
 #endif // DS_LIST_H
