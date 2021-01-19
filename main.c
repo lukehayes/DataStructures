@@ -13,18 +13,20 @@ void printNodes(Node* node)
     }
 }
 
-void addNode(Node* ptrNode, int value, Node* node)
+Node* addNode(Node* ptrNode, int value)
 {
-    node = malloc(sizeof(Node));
+    Node* node = malloc(sizeof(Node));
     node->value = value;
     node->next = NULL;
     ptrNode->next = node;
+    
+    return node;
 }
 
 
 int main() {
 
-    Node* ptr;
+    Node* ptr, *ptr2;
     Node a,b,c;
     a.value = 3;
     b.value = 2;
@@ -35,12 +37,16 @@ int main() {
     b.next = &c;
     c.next = NULL;
 
-    addNode(&c, 100, ptr);
+    ptr = addNode(&c, 100);
+    ptr2 = addNode(ptr, 234);
 
 
     printNodes(&a);
 
     printf("%i \n", ptr->value);
+
+    free(ptr);
+    free(ptr2);
 
 
     return 0;
