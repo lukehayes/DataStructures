@@ -6,6 +6,7 @@
 typedef struct List {
     Node* head;
     Node* tail;
+    int size;
 } List;
 
 #endif // DS_LIST_H
