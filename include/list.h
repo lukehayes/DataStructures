@@ -16,4 +16,20 @@ List* CreateList();
  */
 void  DestroyList(List* list);
 
+/**
+ * Output a formatted view of the list.
+ */
+void PrintList(node_t* head)
+{
+    node_t* temp = head;
+
+    while(temp != NULL)
+    {
+        printf("%i -", temp->value);
+        temp = temp->next;
+    }
+
+    printf("\n");
+}
+
 #endif // DS_LIST_H
