@@ -11,4 +11,9 @@ typedef struct List {
 
 List* createList();
 
+/**
+ * Free all the memory that the list has taken
+ */
+void  DestroyList(List* list);
+
 #endif // DS_LIST_H

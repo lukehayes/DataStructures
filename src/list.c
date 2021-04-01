@@ -9,3 +9,8 @@ List* createList()
 
     return list;
 }
+
+void  DestroyList(List* list)
+{
+    // TODO
+}
