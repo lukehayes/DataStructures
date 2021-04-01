@@ -9,7 +9,7 @@ typedef struct List {
     int size;
 } List;
 
-List* createList();
+List* CreateList();
 
 /**
  * Free all the memory that the list has taken
