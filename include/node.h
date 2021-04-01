@@ -1,9 +1,9 @@
 #ifndef DS_NODE_H
 #define DS_NODE_H
 
-typedef struct Node {
+typedef struct {
     int value;
-    struct Node* next;
-} Node;
+    struct node_t* next;
+} node_t;
 
 #endif // DS_NODE_H

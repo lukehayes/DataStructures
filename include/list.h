@@ -4,8 +4,8 @@
 #include "node.h"
 
 typedef struct List {
-    Node* head;
-    Node* tail;
+    node_t* head;
+    node_t* tail;
     int size;
 } List;
 
