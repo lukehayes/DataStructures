@@ -1,6 +1,7 @@
 #ifndef DS_LIST_H
 #define DS_LIST_H
 
+#include <stddef.h>
 #include "node.h"
 
 typedef struct List {
