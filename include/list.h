@@ -2,6 +2,7 @@
 #define DS_LIST_H
 
 #include <stddef.h>
+#include <stdio.h>
 #include "node.h"
 
 typedef struct List {
