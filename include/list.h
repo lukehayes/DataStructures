@@ -15,4 +15,9 @@ void  DestroyList(List* list);
  */
 void PrintList(List* list);
 
+/**
+ * Add a new value to the end of the list.
+ */
+void AddValue(List* list, int value);
+
 #endif // DS_LIST_H
