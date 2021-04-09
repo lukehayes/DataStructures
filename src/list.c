@@ -1,6 +1,7 @@
 #include "list.h"
 #include "node.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 typedef struct List_ {
     node_t* head;
@@ -22,9 +23,9 @@ void  DestroyList(List* list)
     // TODO
 }
 
-void PrintList(node_t* head)
+void PrintList(List* list)
 {
-    node_t* temp = head;
+    node_t* temp = list->head;
 
     while(temp != NULL)
     {

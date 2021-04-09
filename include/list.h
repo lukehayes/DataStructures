@@ -13,6 +13,6 @@ void  DestroyList(List* list);
 /**
  * Output a formatted view of the list.
  */
-void PrintList(node_t* head);
+void PrintList(List* list);
 
 #endif // DS_LIST_H
