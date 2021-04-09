@@ -1,12 +1,14 @@
 CC       = gcc
 CFLAGS   = -Iinclude -g
 SOURCES  = src/*.c
+BIN      = "bin/app"
 
 all:*.o
-	$(CC) $(CFLAGS) main.c $^ -o app
+	$(shell mkdir -p bin)
+	$(CC) $(CFLAGS) main.c $^ -o $(BIN)
 
 %.o:%src/*.c
 	$(CC) $(CFLAGS) -c $<
 
 clean:
-	rm -rf app *.o
+	rm -rf $(BIN) *.o
