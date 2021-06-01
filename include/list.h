@@ -1,15 +1,7 @@
 #ifndef DS_LIST_H
 #define DS_LIST_H
 
-#include <stddef.h>
-#include <stdio.h>
-#include "node.h"
-
-typedef struct List {
-    node_t* head;
-    node_t* tail;
-    int size;
-} List;
+typedef struct List_ List;
 
 List* CreateList();
 
@@ -21,17 +13,11 @@ void  DestroyList(List* list);
 /**
  * Output a formatted view of the list.
  */
-void PrintList(node_t* head)
-{
-    node_t* temp = head;
+void PrintList(List* list);
 
-    while(temp != NULL)
-    {
-        printf("%i -", temp->value);
-        temp = temp->next;
-    }
-
-    printf("\n");
-}
+/**
+ * Add a new value to the end of the list.
+ */
+void AddValue(List* list, int value);
 
 #endif // DS_LIST_H

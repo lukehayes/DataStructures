@@ -12,7 +12,6 @@ int main() {
     treenode* t5 = CreateNode(5);
     treenode* t6 = CreateNode(100);
 
-
     t1->left = t2;
     t1->right = t3;
 
@@ -23,7 +22,6 @@ int main() {
     /*t2->right = t6;*/
     
     PrintNode(t1, 1);
-
 
     free(t1);
     free(t2);
