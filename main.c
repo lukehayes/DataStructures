@@ -1,35 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "node.h"
+#include "tree.h"
 
-
-void p(node_t* head)
-{
-    node_t* temp = head;
-
-    while(temp != NULL)
-    {
-        printf("%i -", temp->value);
-        temp = temp->next;
-    }
-
-    printf("\n");
-}
 
 int main() {
 
-    struct node_t n1,n2,n3;
-
-    n1.value = 55;
-    n2.value = 803;
-    n3.value = 7;
-
-    n1.next = &n2;
-    n3.next = &n1;
-    n2.next = NULL;
+    treenode* t1 = CreateNode(1);
+    treenode* t2 = CreateNode(2);
+    treenode* t3 = CreateNode(3);
+    treenode* t4 = CreateNode(4);
+    treenode* t5 = CreateNode(5);
+    treenode* t6 = CreateNode(100);
 
 
-    p(&n3);
+    t1->left = t2;
+    t1->right = t3;
+
+    t3->left = t4;
+    t3->right = t5;
+
+
+    /*t2->right = t6;*/
+    
+    PrintNode(t1, 1);
+
+
+    free(t1);
+    free(t2);
+    free(t3);
+    free(t4);
+    free(t5);
+    free(t6);
 
     return 0;
 }
