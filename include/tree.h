@@ -3,8 +3,10 @@
 
 #include <stddef.h>
 #include <stdio.h>
-#include <stdio.h>
 
+/**
+ * The basic tree structire, a Binary Tree.
+ */
 typedef struct treenode
 {
     int value;
