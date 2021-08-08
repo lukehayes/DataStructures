@@ -7,3 +7,6 @@ I also wanted to learn more about data structures so this repo is dedicated to l
 
 ### Currently working on:
 * Node/Linked List
+
+** Edit
+This project is now a home for data structures written in C and Python.
