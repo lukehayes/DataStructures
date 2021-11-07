@@ -18,6 +18,6 @@ void PrintList(List* list);
 /**
  * Add a new value to the end of the list.
  */
-void AddValue(List* list, int value);
+void ListInsert(List* list, int value);
 
 #endif // DS_LIST_H

@@ -36,7 +36,7 @@ void PrintList(List* list)
     printf("\n");
 }
 
-void AddValue(List* list, int value)
+void ListInsert(List* list, int value)
 {
     // TODO
 }
