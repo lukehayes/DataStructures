@@ -38,5 +38,14 @@ void PrintList(List* list)
 
 void ListInsert(List* list, int value)
 {
-    // TODO
+    node_t* temporary = list->head;
+
+    while(temporary->next != NULL)
+    {
+        temporary = temporary->next;
+    }
+
+    temporary->next = (node_t*)malloc(sizeof(node_t));
+    temporary->value = value;
+
 }

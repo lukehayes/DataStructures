@@ -1,34 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "tree.h"
+#include "list.h"
 
 
 int main() {
 
-    treenode* t1 = CreateNode(1);
-    treenode* t2 = CreateNode(2);
-    treenode* t3 = CreateNode(3);
-    treenode* t4 = CreateNode(4);
-    treenode* t5 = CreateNode(5);
-    treenode* t6 = CreateNode(100);
+    List* list = CreateList();
 
-    t1->left = t2;
-    t1->right = t3;
+    ListInsert(list, 600);
+    ListInsert(list, 765);
+    ListInsert(list, 123);
 
-    t3->left = t4;
-    t3->right = t5;
-
-
-    /*t2->right = t6;*/
-    
-    PrintNode(t1, 1);
-
-    free(t1);
-    free(t2);
-    free(t3);
-    free(t4);
-    free(t5);
-    free(t6);
+    PrintList(list);
 
     return 0;
 }
