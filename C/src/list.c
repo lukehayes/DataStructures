@@ -35,6 +35,25 @@ void PrintList(List* list)
     printf("\n");
 }
 
+int ListFindValue(List* list, int value)
+{
+    node_t* temp = list->head;
+
+    while(temp->next != NULL)
+    {
+
+        if(temp->value == value)
+        {
+            return temp->value;
+        }else
+        {
+            return 0;
+        }
+
+        temp = temp->next;
+    }
+}
+
 void ListInsert(List* list, int value)
 {
     node_t* temporary = list->head;

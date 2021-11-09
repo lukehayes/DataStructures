@@ -20,4 +20,12 @@ void PrintList(List* list);
  */
 void ListInsert(List* list, int value);
 
+/**
+ * Find a value in the list.
+ *
+ * @param int value
+ * @return int The value if found. 0 otherwise.
+ */
+int ListFindValue(List* list, int value);
+
 #endif // DS_LIST_H
