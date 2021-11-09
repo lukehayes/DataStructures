@@ -11,8 +11,8 @@ typedef struct List_ {
 List* CreateList()
 {
     List* list = malloc(sizeof(List));
-    list->head = NULL;
-    list->head->value = 10;
+    list->head = malloc(sizeof(node_t));
+    list->head->value = 1;
 
     return list;
 }
@@ -38,6 +38,11 @@ void PrintList(List* list)
 void ListInsert(List* list, int value)
 {
     node_t* temporary = list->head;
+
+    if(temporary == NULL)
+    {
+        printf("NULL \n");
+    }
 
     while(temporary->next != NULL)
     {
