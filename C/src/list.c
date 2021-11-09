@@ -5,7 +5,6 @@
 
 typedef struct List_ {
     node_t* head;
-    node_t* tail;
     int size;
 } List;
 
@@ -13,7 +12,7 @@ List* CreateList()
 {
     List* list = malloc(sizeof(List));
     list->head = NULL;
-    list->tail = NULL;
+    list->head->value = 10;
 
     return list;
 }
@@ -27,7 +26,7 @@ void PrintList(List* list)
 {
     node_t* temp = list->head;
 
-    while(temp != NULL)
+    while(temp->next != NULL)
     {
         printf("%i -", temp->value);
         temp = temp->next;
