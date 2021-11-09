@@ -11,5 +11,8 @@ $(OBJ)/%.o: src/%.c
 all: $(OBJS)
 	$(CC) $(CFLAGS) main.c $^ $(BIN) $(LDFLAGS)
 
+debug: $(OBJS)
+	$(CC) $(CFLAGS) -g main.c $^ $(BIN) $(LDFLAGS)
+
 clean:
 	rm -rf $(BIN) *.o
