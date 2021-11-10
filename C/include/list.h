@@ -1,6 +1,8 @@
 #ifndef DS_LIST_H
 #define DS_LIST_H
 
+#include "node.h"
+
 typedef struct List_ List;
 
 List* CreateList();
@@ -35,5 +37,24 @@ int ListFindValue(List* list, int value);
  * @return int The value if found and removed. 0 otherwise.
  */
 int ListRemoveValue(List* list, int value);
+
+/**
+ * Get the head node of the list.
+ *
+ * @param List* list
+ *
+ * @return int The value if found and removed. 0 otherwise.
+ */
+node_t* ListGetHead(List* list);
+
+
+/**
+ * Get the value stored at the head of the list
+ *
+ * @param List* list
+ *
+ * @return int The value if found and removed. 0 otherwise.
+ */
+int ListGetHeadValue(List* list);
 
 #endif // DS_LIST_H

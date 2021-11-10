@@ -1,5 +1,4 @@
 #include "list.h"
-#include "node.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -12,7 +11,7 @@ List* CreateList()
 {
     List* list = malloc(sizeof(List));
     list->head = malloc(sizeof(node_t));
-    list->head->value = 1;
+    list->head->value = 304;
 
     return list;
 }
@@ -93,4 +92,28 @@ int ListRemoveValue(List* list, int value)
         temp = temp->next;
     }
 
+}
+
+node_t* ListGetHead(List* list)
+{
+    if(list->head == NULL)
+    {
+        return 0;
+
+    } else
+    {
+        return list->head;
+    }
+}
+
+int ListGetHeadValue(List* list)
+{
+    if(list->head == NULL)
+    {
+        return 0;
+
+    } else
+    {
+        return list->head->value;
+    }
 }
