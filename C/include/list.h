@@ -18,7 +18,7 @@ void PrintList(List* list);
 /**
  * Add a new value to the end of the list.
  */
-void ListInsert(List* list, int value);
+void ListInsertEnd(List* list, int value);
 
 /**
  * Find a value in the list.
@@ -27,5 +27,13 @@ void ListInsert(List* list, int value);
  * @return int The value if found. 0 otherwise.
  */
 int ListFindValue(List* list, int value);
+
+/**
+ * Remove a value from the list.
+ *
+ * @param int value
+ * @return int The value if found and removed. 0 otherwise.
+ */
+int ListRemoveValue(List* list, int value);
 
 #endif // DS_LIST_H

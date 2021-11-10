@@ -7,9 +7,14 @@ int main() {
 
     List* list = CreateList();
 
-    ListInsert(list, 600);
-    ListInsert(list, 765);
-    ListInsert(list, 123);
+    ListInsertEnd(list, 600);
+
+    ListInsertEnd(list, 765);
+    ListRemoveValue(list, 600);
+
+    ListInsertEnd(list, 123);
+
+    ListInsertEnd(list, 600);
 
     PrintList(list);
 

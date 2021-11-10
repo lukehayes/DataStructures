@@ -54,7 +54,7 @@ int ListFindValue(List* list, int value)
     }
 }
 
-void ListInsert(List* list, int value)
+void ListInsertEnd(List* list, int value)
 {
     node_t* temporary = list->head;
 
@@ -70,5 +70,27 @@ void ListInsert(List* list, int value)
 
     temporary->next = (node_t*)malloc(sizeof(node_t));
     temporary->value = value;
+
+}
+
+int ListRemoveValue(List* list, int value)
+{
+    node_t** ptrRef = &list->head;
+
+    node_t* temp = list->head;
+
+    while(temp->next != NULL)
+    {
+        if(temp->value == value)
+        {
+            temp->next = *ptrRef;
+
+        }else
+        {
+            return 0;
+        }
+
+        temp = temp->next;
+    }
 
 }
