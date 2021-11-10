@@ -31,6 +31,7 @@ void PrintList(List* list)
         temp = temp->next;
     }
 
+    printf("%i --► ", temp->value);
     printf("NULL\n");
 }
 
@@ -69,23 +70,24 @@ void ListInsertEnd(List* list, int value)
 
 int ListRemoveValue(List* list, int value)
 {
-    /*node_t** ptrRef = &list->head;*/
+    node_t** ptrRef = &list->head;
+    node_t* temp = list->head;
 
-    /*node_t* temp = list->head;*/
-
-    /*while(temp->next != NULL)*/
-    /*{*/
-        /*if(temp->value == value)*/
-        /*{*/
+    while(temp->next != NULL)
+    {
+        if(temp->value == value)
+        {
+            printf("Found %i\n", value);
             /*temp->next = *ptrRef;*/
 
-        /*}else*/
-        /*{*/
-            /*return 0;*/
-        /*}*/
+        }else
+        {
+            return 0;
+        }
 
-        /*temp = temp->next;*/
-    /*}*/
+        temp = temp->next;
+        printf("DONe\n");
+    }
 
 }
 
