@@ -27,11 +27,11 @@ void PrintList(List* list)
 
     while(temp->next != NULL)
     {
-        printf("%i -", temp->value);
+        printf("%i --► ", temp->value);
         temp = temp->next;
     }
 
-    printf("\n");
+    printf("NULL\n");
 }
 
 int ListFindValue(List* list, int value)
@@ -57,40 +57,35 @@ void ListInsertEnd(List* list, int value)
 {
     node_t* temporary = list->head;
 
-    if(temporary == NULL)
-    {
-        printf("NULL \n");
-    }
-
     while(temporary->next != NULL)
     {
         temporary = temporary->next;
     }
 
     temporary->next = (node_t*)malloc(sizeof(node_t));
-    temporary->value = value;
+    temporary->next->value = value;
 
 }
 
 int ListRemoveValue(List* list, int value)
 {
-    node_t** ptrRef = &list->head;
+    /*node_t** ptrRef = &list->head;*/
 
-    node_t* temp = list->head;
+    /*node_t* temp = list->head;*/
 
-    while(temp->next != NULL)
-    {
-        if(temp->value == value)
-        {
-            temp->next = *ptrRef;
+    /*while(temp->next != NULL)*/
+    /*{*/
+        /*if(temp->value == value)*/
+        /*{*/
+            /*temp->next = *ptrRef;*/
 
-        }else
-        {
-            return 0;
-        }
+        /*}else*/
+        /*{*/
+            /*return 0;*/
+        /*}*/
 
-        temp = temp->next;
-    }
+        /*temp = temp->next;*/
+    /*}*/
 
 }
 
