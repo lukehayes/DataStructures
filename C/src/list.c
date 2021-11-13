@@ -18,7 +18,22 @@ List* CreateList()
 
 void  DestroyList(List* list)
 {
-    // TODO
+    node_t* head = list->head;
+    node_t* temp = list->head;
+
+    free(head);
+
+    while(head->next != NULL)
+    {
+        head = head->next;
+        temp = head;
+        printf("Freeing %i\n", temp->value);
+        free(temp);
+    }
+
+    free(list);
+
+    printf("Done \n");
 }
 
 void PrintList(List* list)
@@ -68,26 +83,26 @@ void ListInsertEnd(List* list, int value)
 
 }
 
-int ListRemoveValue(List* list, int value)
+int ListRemoveValue(List** list, int value)
 {
-    node_t** ptrRef = &list->head;
-    node_t* temp = list->head;
+    /*node_t** ptrRef = &list->head;*/
+    /*node_t* temp = list->head;*/
 
-    while(temp->next != NULL)
-    {
-        if(temp->value == value)
-        {
-            printf("Found %i\n", value);
-            /*temp->next = *ptrRef;*/
+    /*while(temp->next != NULL)*/
+    /*{*/
+        /*if(temp->value == value)*/
+        /*{*/
+            /*printf("Found %i\n", value);*/
+            /*[>temp->next = *ptrRef;<]*/
 
-        }else
-        {
-            return 0;
-        }
+        /*}else*/
+        /*{*/
+            /*return 0;*/
+        /*}*/
 
-        temp = temp->next;
-        printf("DONe\n");
-    }
+        /*temp = temp->next;*/
+        /*printf("DONe\n");*/
+    /*}*/
 
 }
 

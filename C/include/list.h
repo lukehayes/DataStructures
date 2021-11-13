@@ -36,7 +36,7 @@ int ListFindValue(List* list, int value);
  * @param int value
  * @return int The value if found and removed. 0 otherwise.
  */
-int ListRemoveValue(List* list, int value);
+int ListRemoveValue(List** list, int value);
 
 /**
  * Get the head node of the list.
