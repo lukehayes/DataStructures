@@ -10,8 +10,8 @@ typedef struct List_ {
 List* CreateList()
 {
     List* list = malloc(sizeof(List));
-    list->head = malloc(sizeof(node_t));
-    list->head->value = 304;
+    /*list->head = malloc(sizeof(node_t));*/
+    /*list->head->value = 304;*/
 
     return list;
 }
@@ -20,6 +20,12 @@ void  DestroyList(List* list)
 {
     node_t* head = list->head;
     node_t* temp = list->head;
+
+    if(list->head == NULL)
+    {
+        free(list);
+        return;
+    }
 
     free(head);
 
@@ -72,6 +78,13 @@ int ListFindValue(List* list, int value)
 void ListInsertEnd(List* list, int value)
 {
     node_t* temporary = list->head;
+
+    if(temporary == NULL)
+    {
+        list->head = (node_t*)malloc(sizeof(node_t));
+        list->head->value = value;
+        return;
+    }
 
     while(temporary->next != NULL)
     {
