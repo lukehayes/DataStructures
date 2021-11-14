@@ -7,17 +7,19 @@ int main() {
 
     List* list = CreateList();
 
-
-    ListInsertEnd(list, 888);
-    ListInsertEnd(list, 590);
-    ListInsertEnd(list, 600);
-    ListInsertEnd(list, 765);
-
-    /*ListRemoveValue(&list, 600);*/
-
-    DestroyList(list);
+    for (int i = 0; i < 10; i++) {
+        ListInsertEnd(list, i);
+    }
 
     PrintList(list);
+
+    ListRemoveValue(&list, 0);
+    ListRemoveValue(&list, 1);
+    ListRemoveValue(&list, 5);
+
+    PrintList(list);
+
+    DestroyList(list);
 
     return 0;
 }

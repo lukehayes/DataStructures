@@ -98,8 +98,27 @@ void ListInsertEnd(List* list, int value)
 
 int ListRemoveValue(List** list, int value)
 {
-    /*node_t** ptrRef = &list->head;*/
-    /*node_t* temp = list->head;*/
+    node_t* head = (*list)->head;
+
+    if( head->value == value )
+    {
+        (*list)->head = (*list)->head->next; 
+        node_t* temp = (*list)->head;
+        free(head);
+        return 1;
+    }else
+    {
+        while(head->next != NULL)
+        {
+            if(head->value = value)
+            {
+                printf("Found %i\n", value);
+                return;
+            }
+            head = head->next;
+        }
+    }
+
 
     /*while(temp->next != NULL)*/
     /*{*/
@@ -107,6 +126,7 @@ int ListRemoveValue(List** list, int value)
         /*{*/
             /*printf("Found %i\n", value);*/
             /*[>temp->next = *ptrRef;<]*/
+            /*[>printf("Changed %i\n", value);<]*/
 
         /*}else*/
         /*{*/
@@ -114,7 +134,7 @@ int ListRemoveValue(List** list, int value)
         /*}*/
 
         /*temp = temp->next;*/
-        /*printf("DONe\n");*/
+        /*printf("Done\n");*/
     /*}*/
 
 }
