@@ -3,6 +3,7 @@
 
 #include <stddef.h>
 #include <stdio.h>
+#include "log.h"
 
 /**
  * The basic tree structire, a Binary Tree.
@@ -24,7 +25,7 @@ void PrintTab(int tabs)
     }
 }
 
-TreeNode* CreateNode(int value)
+TreeNode* CreateTreeNode(int value)
 {
     TreeNode* result = malloc(sizeof(TreeNode));
 
@@ -37,22 +38,25 @@ TreeNode* CreateNode(int value)
 
 void TreeInsertNode(TreeNode* node, int value)
 {
-    int head = node->value;
+    TreeNode** head = &node;
 
-    if(value > head)
+    if( node->value < value )
     {
-        node->right = malloc(sizeof(int));
-        node->right->value = node->value;
-    } else
-    {
-        node->left = malloc(sizeof(int));
-        node->left->value = value;
+        while(node->left != NULL)
+        {
+            node = node->left;
+
+            if(node->left == NULL)
+            {
+                TreeNode* newNode = malloc(sizeof(TreeNode));
+                newNode->value = value;
+                node= newNode;
+            }
+        }
     }
-
-
 }
 
-void PrintNode(TreeNode* node, int level)
+void PrintTree(TreeNode* node, int level)
 {
     if(node == NULL)
     {
@@ -63,14 +67,15 @@ void PrintNode(TreeNode* node, int level)
 
     PrintTab(level);
     printf("Value: %i \n\n", node->value);
+    PrintValueArrow(node->value);
     PrintTab(level);
     printf("LEFT \n");
 
-    PrintNode(node->left, level + 1);
+    PrintTree(node->left, level + 1);
     PrintTab(level);
     printf("RIGHT \n");
 
-    PrintNode(node->right, level + 1);
+    PrintTree(node->right, level + 1);
 
 }
 
