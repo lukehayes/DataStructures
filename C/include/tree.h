@@ -7,13 +7,13 @@
 /**
  * The basic tree structire, a Binary Tree.
  */
-typedef struct treenode
+typedef struct TreeNode
 {
     int value;
-    struct treenode* left;
-    struct treenode* right;
+    struct TreeNode* left;
+    struct TreeNode* right;
 
-} treenode;
+} TreeNode;
 
 
 void PrintTab(int tabs)
@@ -24,9 +24,9 @@ void PrintTab(int tabs)
     }
 }
 
-treenode* CreateNode(int value)
+TreeNode* CreateNode(int value)
 {
-    treenode* result = malloc(sizeof(treenode));
+    TreeNode* result = malloc(sizeof(TreeNode));
 
     result->left = NULL;
     result->right = NULL;
@@ -36,7 +36,7 @@ treenode* CreateNode(int value)
 }
 
 
-void PrintNode(treenode* node, int level)
+void PrintNode(TreeNode* node, int level)
 {
     if(node == NULL)
     {
