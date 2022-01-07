@@ -19,6 +19,11 @@ void li(const char* str1, int n) {
     printf("LOG: %s:%i \n", str1, n);
 }
 
+void PrintValueArrow(int value)
+{
+    printf("%i --► ", value);
+}
+
 
 
 #endif
