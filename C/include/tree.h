@@ -35,6 +35,22 @@ TreeNode* CreateNode(int value)
     return result;
 }
 
+void TreeInsertNode(TreeNode* node, int value)
+{
+    int head = node->value;
+
+    if(value > head)
+    {
+        node->right = malloc(sizeof(int));
+        node->right->value = node->value;
+    } else
+    {
+        node->left = malloc(sizeof(int));
+        node->left->value = value;
+    }
+
+
+}
 
 void PrintNode(TreeNode* node, int level)
 {
