@@ -14,5 +14,8 @@ all: $(OBJS)
 debug: $(OBJS)
 	$(CC) $(CFLAGS) -g main.c $^ $(BIN) $(LDFLAGS)
 
+preprocess: $(OBJS)
+	$(CC) $(CFLAGS) -E main.c $^ $(BIN) $(LDFLAGS)
+
 clean:
 	rm -rf $(BIN) *.o
