@@ -113,7 +113,7 @@ int ListRemoveValue(List** list, int value)
             if(head->value = value)
             {
                 printf("Found %i\n", value);
-                return;
+                return 0;
             }
             head = head->next;
         }
