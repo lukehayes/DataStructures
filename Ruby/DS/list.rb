@@ -1,8 +1,12 @@
 module DS
+
   class List
-    def initialize
-      puts "Creted"
+    attr_accessor :head
+
+    def initialize(head)
+      @head = head
     end
   end
+
 end
 
