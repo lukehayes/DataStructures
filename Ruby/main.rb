@@ -7,21 +7,17 @@ require "printer/list_printer"
 
 lp = DS::Printer::ListPrinter.new
 
-a = DS::ListNode.new(100,nil)
-b = DS::ListNode.new(200,a)
-c = DS::ListNode.new(300,b)
-d = DS::ListNode.new(300,c)
+
+a = DS::ListNode.new(100)
+b = DS::ListNode.new(200)
+c = DS::ListNode.new(300)
+d = DS::ListNode.new(400)
+e = DS::ListNode.new(500)
 
 ll = DS::List.new(a)
 
-
-node = a
-
-loop do
-  puts "Printing "
-  puts node.value
-  node = node.next_node
-  break if node.nil?
-end
-
+a.next_node = b
+b.next_node = c
+c.next_node = d
+d.next_node = e
 
