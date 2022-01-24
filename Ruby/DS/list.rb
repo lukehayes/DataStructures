@@ -25,6 +25,10 @@ module DS
     def size
       size = 0
       head = @head
+
+      return 0 unless head
+      size += 1
+
       until next_node_nil?(head)
         head = head.next_node
         size += 1
