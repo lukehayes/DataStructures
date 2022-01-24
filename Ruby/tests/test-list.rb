@@ -28,10 +28,10 @@ class TestList < Minitest::Test
     assert_equal @list.last.value, 111
   end
 
-  def test_can_add_list_node_to_list
+  def test_can_add_node_to_end_of_list
     node = DS::ListNode.new(111)
-    @list.add(node)
-    #assert_equal @c.next_node, @c.next_node.instance_of? node
+    @list.insert_at_end(node)
+    assert_equal 111, @list.last_node.value
   end
 
   def test_can_count_elements_number

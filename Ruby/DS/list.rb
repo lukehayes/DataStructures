@@ -1,10 +1,15 @@
 module DS
 
   class List
+
     attr_accessor :head
 
     def initialize(head)
       @head = head
+    end
+
+    def first_node
+      @head
     end
 
     def last_node
@@ -13,6 +18,8 @@ module DS
         node = node.next_node
         size += 1
       end
+    def insert_at_end(node)
+      last_node.next_node = node
     end
 
     def size
