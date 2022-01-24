@@ -17,6 +17,22 @@ class TestList < Minitest::Test
     assert true, @list.next_node_nil?(@c)
   end
 
+  def test_can_find_last_node
+    assert_equal @c.last.value, 111
+  end
+
+  def test_next_node_value_correct
+    node = DS::ListNode.new(111)
+    @list.add(node)
+    assert_equal @list.last.value, 111
+  end
+
+  def test_can_add_list_node_to_list
+    node = DS::ListNode.new(111)
+    @list.add(node)
+    #assert_equal @c.next_node, @c.next_node.instance_of? node
+  end
+
   def test_can_count_elements_number
     assert_equal 3, @list.size
   end
