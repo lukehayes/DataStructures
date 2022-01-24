@@ -43,6 +43,9 @@ module DS
       node.next_node === nil
     end
 
+    def empty?
+      size == 0
+    end
   end
 end
 
