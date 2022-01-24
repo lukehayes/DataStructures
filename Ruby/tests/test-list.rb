@@ -8,9 +8,10 @@ class TestList < Minitest::Test
     @a = DS::ListNode.new(100)
     @b = DS::ListNode.new(200)
     @c = DS::ListNode.new(300)
-    @list = DS::List.new(@a)
-    @a.next_node = @b
-    @b.next_node = @c
+    @list = DS::List.new
+    @list.insert_at_end(@a)
+    @list.insert_at_end(@b)
+    @list.insert_at_end(@c)
   end
 
   def test_next_node_is_nil

@@ -4,10 +4,6 @@ module DS
 
     attr_accessor :head
 
-    def initialize(head)
-      @head = head
-    end
-
     def first_node
       @head
     end
@@ -19,7 +15,11 @@ module DS
         size += 1
       end
     def insert_at_end(node)
-      last_node.next_node = node
+      if size < 1
+        @head = node
+      else
+        last_node.next_node = node
+      end
     end
 
     def size
