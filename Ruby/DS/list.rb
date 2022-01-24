@@ -4,6 +4,9 @@ module DS
 
     attr_accessor :head
 
+    def initialize
+    end
+
     def first_node
       @head
     end
