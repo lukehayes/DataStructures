@@ -11,6 +11,16 @@ module DS
       node.next_node == nil
     end
 
+    def size
+      size = 0
+      head = @head
+      until next_node_nil?(head)
+        head = head.next_node
+        size += 1
+      end
+      size
+    end
+
   end
 end
 
