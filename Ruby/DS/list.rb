@@ -17,6 +17,10 @@ module DS
       size
     end
 
+    def next_node_nil?(node)
+      node.next_node === nil
+    end
+
   end
 end
 
