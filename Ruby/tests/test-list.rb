@@ -21,6 +21,9 @@ class TestList < Minitest::Test
   def test_can_find_last_node
     assert_equal @list.last_node.value, 300
   end
+
+  def test_can_find_first_node
+    assert_equal @list.first_node.value, 100
   end
 
   def test_next_node_value_correct
@@ -33,6 +36,16 @@ class TestList < Minitest::Test
     node = DS::ListNode.new(111)
     @list.insert_at_end(node)
     assert_equal 111, @list.last_node.value
+  end
+
+  def test_can_check_if_list_is_empty
+    empty_list = DS::ListNode.new()
+    assert_equal 0, @list.size
+  end
+
+  def test_list_empty_method_works
+    empty_list = DS::ListNode.new
+    assert_equal 0, empty_list.empty?
   end
 
   def test_can_count_elements_number
