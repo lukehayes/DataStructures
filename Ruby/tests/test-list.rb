@@ -18,7 +18,8 @@ class TestList < Minitest::Test
   end
 
   def test_can_find_last_node
-    assert_equal @c.last.value, 111
+    assert_equal @list.last_node.value, 300
+  end
   end
 
   def test_next_node_value_correct

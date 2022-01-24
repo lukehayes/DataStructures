@@ -7,6 +7,14 @@ module DS
       @head = head
     end
 
+    def last_node
+      node = @head
+      until next_node_nil?(node)
+        node = node.next_node
+        size += 1
+      end
+    end
+
     def size
       size = 0
       head = @head
