@@ -4,8 +4,6 @@ module DS
 
   class List
 
-    include NodeTraits
-
     attr_accessor :head
 
     def initialize
@@ -18,13 +16,16 @@ module DS
     def last_node
       node = @head
       until next_node_nil?(node)
+        pp node
         node = node.next_node
-        size += 1
       end
-    def insert_at_end(node)
+    end
+
+    def insert_at_end(value)
       if size < 1
-        @head = node
+        @head = DS::ListNode.new(value)
       else
+        node = DS::ListNode.new(value)
         last_node.next_node = node
       end
     end
@@ -46,6 +47,11 @@ module DS
     def empty?
       size == 0
     end
+
+    def next_node_nil?(node)
+      puts node
+      #node.next_node === nil
+    end
+
   end
 end
-
