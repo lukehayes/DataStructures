@@ -1,6 +1,10 @@
+require_relative "./node_traits.rb"
+
 module DS
 
   class List
+
+    include NodeTraits
 
     attr_accessor :head
 
@@ -37,10 +41,6 @@ module DS
         size += 1
       end
       size
-    end
-
-    def next_node_nil?(node)
-      node.next_node === nil
     end
 
     def empty?
