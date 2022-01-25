@@ -1,5 +1,3 @@
-require_relative "./node_traits.rb"
-
 module DS
 
   class List
@@ -9,25 +7,7 @@ module DS
     def initialize
     end
 
-    def first_node
-      @head
-    end
-
-    def last_node
-      node = @head
-      until next_node_nil?(node)
-        pp node
-        node = node.next_node
-      end
-    end
-
     def insert_at_end(value)
-      if size < 1
-        @head = DS::ListNode.new(value)
-      else
-        node = DS::ListNode.new(value)
-        last_node.next_node = node
-      end
     end
 
     def size
@@ -49,8 +29,10 @@ module DS
     end
 
     def next_node_nil?(node)
-      puts node
-      #node.next_node === nil
+      #puts "Node: #{node.class}"
+      ##puts "Node: #{node} Value: #{node.value}"
+      #puts "Node #{node} - #{node.class} - #{node.object_id}"
+      node.next_node.nil?
     end
 
   end

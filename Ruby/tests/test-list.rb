@@ -6,24 +6,30 @@ class TestList < Minitest::Test
 
   def setup
     @list = DS::List.new
-    @list.insert_at_end(100)
-    @list.insert_at_end(200)
-    @list.insert_at_end(300)
+    @list.insert_at_end(777)
+    @list.insert_at_end(888)
+    @list.insert_at_end(999)
+  end
+
+  def test_can_count_empty_list
+    list = DS::List.new
+    assert_equal 0, list.size
+  end
+
+  def test_empty_method_works
+    list = DS::List.new
+    assert list.empty?
   end
 
   #def test_can_add_node_to_end_of_list
     #@list.insert_at_end(111)
     #assert_equal 111, @list.last_node.value
   #end
-  #
-  def test_can_count_empty_list
-    list = DS::List.new
-    assert_equal 0, list.size
-  end
+  
 
-  def test_can_count_elements_number
-    assert_equal 3, @list.size
-  end
+  #def test_can_count_elements_number
+    #assert_equal 4, @list.size
+  #end
 
   #def test_can_find_last_node
     #assert_equal @list.last_node.value, 300
