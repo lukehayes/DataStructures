@@ -14,7 +14,7 @@ c = DS::ListNode.new(300)
 d = DS::ListNode.new(400)
 e = DS::ListNode.new(500)
 
-ll = DS::List.new(a)
+ll = DS::List.new
 
 a.next_node = b
 b.next_node = c
