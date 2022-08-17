@@ -1,4 +1,5 @@
 from DS.list import Node,List
+from DS.sorts.quick_sort import quicksort
 
 l = List()
 a = Node(100)
