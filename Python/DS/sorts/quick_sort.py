@@ -6,13 +6,13 @@ def quicksort(ary):
     else:
         length = len(ary)
         pivot = ary[math.floor(length / 2)]
-        left =  []
-        right = []
+        smaller =  []
+        larger = []
 
         for x in ary:
             if x < pivot:
-                left.append(x)
+                smaller.append(x)
             elif x > pivot:
-                right.append(x)
+                larger.append(x)
 
-        return ary.append(quicksort(left))
+        return quicksort(smaller) + [pivot] + quicksort(larger)
