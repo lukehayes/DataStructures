@@ -1,4 +1,5 @@
-from DS.list import Node,List
+from DS.node import Node
+from DS.list import List
 from DS.sorts.quick_sort import quicksort
 
 l = List()
