@@ -6,6 +6,8 @@ class Node(object):
         self.next = next_node
         self.value = value
 
+    def __repr__(self):
+        return "Node Value: {}, Next Node: {}\n".format(self.value, self.next)
 
 
 class List(object):
