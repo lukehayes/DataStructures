@@ -5,11 +5,17 @@ class List(object):
 
     def add(self, node):
 
-        current = self.head
-
-        if current == None:
+        if self.head == None:
             self.head = node
             return
+        else:
+            current = self.head
+
+            while (current.next is not None):
+                current = current.next
+
+            if(current.next == None):
+                current.next = node
 
         while (current.next is not None):
             current = current.next
