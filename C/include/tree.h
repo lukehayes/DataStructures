@@ -6,7 +6,7 @@
 #include "log.h"
 
 /**
- * The basic tree structire, a Binary Tree.
+ * The basic tree structure - A Binary Tree.
  */
 typedef struct TreeNode
 {
