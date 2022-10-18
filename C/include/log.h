@@ -19,8 +19,12 @@ void li(const char* str1, int n) {
     printf("LOG: %s:%i \n", str1, n);
 }
 
+void lp(const char* str1, int* n) {
+    printf("LOG: %s\n\tMemory Address:%p\n\tActual Value: %i \n", str1, n, *n);
+}
+
 void PrintValueArrow(int value)
-{
+{ 
     printf("%i --► ", value);
 }
 
