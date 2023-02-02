@@ -3,5 +3,5 @@
 task default: %w[test]
 
 task :test do
-  ruby 'test/test-list.rb'
+  ruby 'test/test_list_node.rb'
 end
