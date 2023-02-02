@@ -3,5 +3,7 @@
 task default: %w[test]
 
 task :test do
-  ruby 'test/test_list_node.rb'
+  Dir.glob('./test/*.rb').sort.each do |file|
+    require file
+  end
 end
