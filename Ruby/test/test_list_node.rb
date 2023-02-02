@@ -4,7 +4,7 @@ require_relative '../ds/list/list_node'
 
 # List Node Tests.
 #
-class TestListNode < Minitest::Test
+class TestList < Minitest::Test
   def test_new_node_default_value_is_nil
     node = DS::ListNode.new
     assert_nil(node.value)
