@@ -12,7 +12,7 @@ class TestList < Minitest::Test
 
   def test_new_node_default_next_is_nil
     node = DS::ListNode.new
-    assert_nil(node.next)
+    assert_nil(node.next_node)
   end
 
   def test_can_set_node_value
@@ -34,10 +34,10 @@ class TestList < Minitest::Test
     second_node = DS::ListNode.new
     second_node.value = 2
 
-    first_node.next = second_node
+    first_node.next_node = second_node
 
-    refute_nil(first_node.next)
+    refute_nil(first_node.next_node)
 
-    assert_equal(2, first_node.next.value)
+    assert_equal(2, first_node.next_node.value)
   end
 end
