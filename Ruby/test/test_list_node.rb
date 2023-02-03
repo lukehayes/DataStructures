@@ -24,7 +24,7 @@ class TestList < Minitest::Test
   def test_can_get_node_value
     node = DS::ListNode.new
     node.value = 444
-    assert_equal(444, node.value, 'List node value getter failed.')
+    assert_equal(444, node.value)
   end
 
   def test_can_set_next_node
