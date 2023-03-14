@@ -7,6 +7,8 @@ set( CMAKE_C_COMPILER "/usr/bin/clang")
 # Set C Version
 set( CMAKE_C_FLAGS "-w -std=c11")
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # Main Include Path
 set( INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")
 
