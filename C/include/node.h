@@ -10,6 +10,14 @@ typedef struct node_t
 
 } node_t;
 
+/**
+ * Create a new node_t with a specific value and set its
+ * next pointer to NULL by default.
+ *
+ * @param void* value.
+ *
+ * @return node_t*.
+ */
 node_t* create_node(void* value)
 {
   node_t* n = malloc(sizeof(node_t));
