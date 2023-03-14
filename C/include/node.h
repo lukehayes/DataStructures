@@ -42,6 +42,23 @@ void connect_node(node_t* a, node_t* b)
 }
 
 /**
+ * Add a node to the front of the list.
+ *
+ * @param node_t** head.
+ *
+ * @param void* value.
+ *
+ * @return void.
+ */
+void push_front(node_t** head, void* value)
+{
+  node_t* rest = *head;
+  node_t* new_node = create_node(value);
+  new_node->next = rest;
+  *head = new_node;
+}
+
+/**
  * Add a node to the end of the list.
  *
  * @param node_t* head.
