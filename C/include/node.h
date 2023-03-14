@@ -42,6 +42,30 @@ void connect_node(node_t* a, node_t* b)
 }
 
 /**
+ * Add a node to the end of the list.
+ *
+ * @param node_t* head.
+ *
+ * @param void* value.
+ *
+ * @return void.
+ */
+void push_value(node_t* head, void* value)
+{
+  if(head == NULL)
+  {
+    head = create_node((int*) value);
+  }else
+  {
+    while(head->next != NULL)
+    {
+      head = head->next;
+    }
+    head->next= create_node((int*) value);
+  }
+}
+
+/**
  * Print each node_t value until the end.
  *
  * @param node_t* head.
