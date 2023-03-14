@@ -41,4 +41,25 @@ void connect_node(node_t* a, node_t* b)
   a->next = b;
 }
 
+/**
+ * Print each node_t value until the end.
+ *
+ * @param node_t* head.
+ *
+ * @return void.
+ */
+void print_node_list(node_t* head)
+{
+  if(head != NULL)
+  {
+    printf("Node Value: %i \n", head->value);
+  }
+
+  while(head->next != NULL)
+  {
+    head = head->next;
+    printf("Node Value: %i \n", head->value);
+  }
+}
+
 #endif //DS_NODE_H
