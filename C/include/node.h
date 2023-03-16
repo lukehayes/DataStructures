@@ -42,6 +42,30 @@ void connect_node(node_t* a, node_t* b)
 }
 
 /**
+ * Check if a node is equal to NULL.
+ *
+ * @param node_t* n.
+ *
+ * @return int.
+ */
+int node_null(node_t* n)
+{
+  return n == NULL ? 1 : 0;
+}
+
+/**
+ * Check if a node is NOT equal to NULL.
+ *
+ * @param node_t* n.
+ *
+ * @return int.
+ */
+int node_not_null(node_t* n)
+{
+  return !node_null(n);
+}
+
+/**
  * Add a node to the front of the list.
  *
  * @param node_t** head.
