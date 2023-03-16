@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 PROJECT(app)
 
 # Set C Compiler
-set( CMAKE_C_COMPILER "/usr/bin/clang")
+#set( CMAKE_C_COMPILER "/usr/bin/clang")
 
 # Set C Version
 set( CMAKE_C_FLAGS "-w -std=c11")
@@ -23,9 +23,6 @@ add_subdirectory("${SOURCE_DIR}")
 
 ADD_EXECUTABLE(app main.c)
 
-target_link_libraries( app DS )
-
-
-
-
+target_link_libraries( app )
+#target_link_libraries( app DS )
 
