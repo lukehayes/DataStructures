@@ -64,6 +64,17 @@ int node_list_size(node_t* head);
 void push_front(node_t** head, void* value);
 
 /**
+ * Push a node to the back of the list.
+ *
+ * @param node_t** head.
+ *
+ * @param void* value.
+ *
+ * @return void.
+ */
+void push_back(node_t** head, void* value);
+
+/**
  * Add a node to the end of the list.
  *
  * @param node_t* head.

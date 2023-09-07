@@ -68,6 +68,24 @@ void push_value(node_t* head, void* value)
     }
 }
 
+void push_back(node_t** head, void* value)
+{
+    node_t* node = *head;
+    
+    while(node)
+    {
+        printf("Next Node: %i \n", node->value);
+
+        if(!node->next)
+        {
+            node->next = create_node(value);
+            return;
+        }else {
+            node = node->next;
+        }
+    }
+}
+
 static void print_node_value(node_t* node, int index)
 {
     printf("Node Value: %i at index[%i]\n", node->value, index);
@@ -87,40 +105,4 @@ void print_node_list(node_t* head)
         index++;
         print_node_value(head, index);
     }
-}
-
-
-int find_node_value(node_t* head, void* value, void** result)
-{
-    int index = 0;
-    if(node_null(head)) return -1;
-
-    if(head->value == value)
-    {
-        *result = value;
-        return index;
-    }else {
-
-        head = head->next;
-        index++;
-
-        while(head->value != value)
-        {
-            // printf("head Value %i \n", head->value);
-            head = head->next;
-            index++;
-        }
-
-        if(index < node_list_size(head))
-        {
-            *result = head->value;
-            return index;
-        }else
-        {
-            printf("Value %i not found in list \n");
-            return -1;
-        }
-    }
-
-    return -1;
 }
