@@ -107,6 +107,13 @@ node_t* get_node_at_index(node_t* head, int index)
     }
 }
 
+
+void print_node(node_t* node)
+{
+    printf("Node Address: %p Node Value: %i \n", node, node->value);
+}
+
+
 static void print_node_value(node_t* node, int index)
 {
     printf("Node Value: %i at index[%i]\n", node->value, index);

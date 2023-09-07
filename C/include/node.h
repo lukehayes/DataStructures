@@ -113,6 +113,15 @@ node_t* get_node_at_index(node_t* head, int index);
 void print_node_list(node_t* head);
 
 /**
+ * Print a single node_t value.
+ *
+ * @param node_t* node.
+ *
+ * @return void.
+ */
+void print_node(node_t* node);
+
+/**
  * Print a specific node value.
  */
 static void print_node_value(node_t* node, int index);
