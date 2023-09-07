@@ -11,7 +11,6 @@ typedef struct node_t
 
 } node_t;
 
-
 /**
  * Create a new node_t with a specific value and set its
  * next pointer to NULL by default.
@@ -50,6 +49,13 @@ int node_null(node_t* n);
  */
 int node_not_null(node_t* n);
 
+/**
+ * Get the size of the list.
+ *
+ * @param node_t* n.
+ *
+ * @return Size of the list.
+ */
 int node_list_size(node_t* head);
 
 /**
