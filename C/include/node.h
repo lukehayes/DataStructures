@@ -93,6 +93,17 @@ void push_back(node_t** head, void* value);
 void push_value(node_t* head, void* value);
 
 /**
+ * Get a node at a specific index if it exists.
+ *
+ * @param node_t* head.
+ *
+ * @param int index.
+ *
+ * @return void.
+ */
+node_t* get_node_at_index(node_t* head, int index);
+
+/**
  * Print each node_t value until the end.
  *
  * @param node_t* head.

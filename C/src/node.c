@@ -86,6 +86,29 @@ void push_back(node_t** head, void* value)
     }
 }
 
+node_t* get_node_at_index(node_t* head, int index)
+{
+    // Bail out if the index is too large or too small.
+    if(index < 0 || index > node_list_size(head)) return NULL;
+
+    printf("Here \n");
+
+    static int index_counter = 0;
+    node_t* current_node = head;
+
+    if(index_counter == index) return head;
+
+    while(current_node)
+    {
+        current_node = current_node->next;
+        print_node(current_node);
+        index_counter++;
+
+        // Node has been found at the index given.
+        if(index_counter == index) return current_node;
+    }
+}
+
 static void print_node_value(node_t* node, int index)
 {
     printf("Node Value: %i at index[%i]\n", node->value, index);
