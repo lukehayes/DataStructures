@@ -74,8 +74,6 @@ void push_back(node_t** head, void* value)
     
     while(node)
     {
-        printf("Next Node: %i \n", node->value);
-
         if(!node->next)
         {
             node->next = create_node(value);
