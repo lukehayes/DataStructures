@@ -103,6 +103,9 @@ void push_value(node_t* head, void* value);
  */
 node_t* get_node_at_index(node_t* head, int index);
 
+
+void free_list(node_t* head);
+
 /**
  * Print each node_t value until the end.
  *

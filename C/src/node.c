@@ -1,4 +1,5 @@
 #include "node.h"
+#include <stdio.h>
 
 node_t* create_node(void* value)
 {
@@ -81,6 +82,20 @@ void push_back(node_t** head, void* value)
         }else {
             node = node->next;
         }
+    }
+}
+
+void free_list(node_t* head)
+{
+    int size = node_list_size(head);
+    printf("Size: %i \n", size);
+
+    // FIXME Segfault,crash, bang, wallop.
+    for(int i = size; i >= 0; i--)
+    {
+        printf("I %i \n", i);
+        node_t* node = get_node_at_index(head, i);
+        print_node(node);
     }
 }
 
