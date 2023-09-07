@@ -14,12 +14,12 @@ void connect_node(node_t* a, node_t* b)
     a->next = b;
 }
 
-int node_null(node_t* n)
+bool node_null(node_t* n)
 {
-    return n == NULL ? 1 : 0;
+    return n == NULL ? true : false;
 }
 
-int node_not_null(node_t* n)
+bool node_not_null(node_t* n)
 {
     return !node_null(n);
 }

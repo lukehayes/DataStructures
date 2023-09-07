@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct node_t
 {
@@ -38,7 +39,7 @@ void connect_node(node_t* a, node_t* b);
  *
  * @return int.
  */
-int node_null(node_t* n);
+bool node_null(node_t* n);
 
 /**
  * Check if a node is NOT equal to NULL.
@@ -47,7 +48,7 @@ int node_null(node_t* n);
  *
  * @return int.
  */
-int node_not_null(node_t* n);
+bool node_not_null(node_t* n);
 
 /**
  * Get the size of the list.
