@@ -74,8 +74,6 @@ void push_front(node_t** head, void* value);
  */
 void push_value(node_t* head, void* value);
 
-static void print_node_value(node_t* node, int index);
-
 /**
  * Print each node_t value until the end.
  *
@@ -84,5 +82,10 @@ static void print_node_value(node_t* node, int index);
  * @return void.
  */
 void print_node_list(node_t* head);
+
+/**
+ * Print a specific node value.
+ */
+static void print_node_value(node_t* node, int index);
 
 #endif //DS_NODE_H
