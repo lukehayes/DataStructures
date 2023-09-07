@@ -1,11 +1,6 @@
 #include <stdio.h>
-
 #include "node.h"
 
-void pn(node_t* node)
-{
-    printf("Node: %i, Next: %p \n", node->value, node->next);
-}
 
 int main()
 {
@@ -23,13 +18,6 @@ int main()
 
     push_value(head, (int*)(888));
     
-    int* res = malloc(sizeof(int));
-    int idx = find_node_value(head, (int*)2888, res);
-    printf("Result %i, index: %i\n", *res, idx);
-
-    free(res);
-
-
 
     print_node_list(head);
 

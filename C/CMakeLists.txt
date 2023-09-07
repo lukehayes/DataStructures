@@ -1,28 +1,35 @@
-cmake_minimum_required(VERSION 3.10)
-PROJECT(app)
+cmake_minimum_required(VERSION 3.2)
+project(DS)
 
-# Set C Compiler
-#set( CMAKE_C_COMPILER "/usr/bin/clang")
-
-# Set C Version
-set( CMAKE_C_FLAGS "-w -std=c11")
-
+# Variables.
+#
+set(CMAKE_C_STANDARD 23)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(INCLUDE_DIRS "include")
+set(BIN_NAME "CDS")
 
-# Main Include Path
-set( INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")
+# Add debugging option.
+#
+option(DEV_DEBUG "Enter debug mode" 0)
+if (DEV_DEBUG)
+  add_definitions(-DDEV_DEBUG)
+endif()
 
-# Main Source Path
-set( SOURCE_DIR "${PROJECT_SOURCE_DIR}/src")
+# Find all source files.
+# 
+# file(GLOB SRC_FILES "${CMAKE_SOURCE_DIR}/src/*.cpp")
 
-# Set the include directory
-include_directories( "${INCLUDE_DIR}" )
+# Set the project include directories.
+# 
+include_directories(${INCLUDE_DIRS})
 
-# Subdirectories
-add_subdirectory("${SOURCE_DIR}")
+# Create the final binary.
+# 
+add_executable(${BIN_NAME} main.c ${SRC_FILES})
 
-ADD_EXECUTABLE(app main.c)
+add_subdirectory(src)
 
-target_link_libraries( app )
-#target_link_libraries( app DS )
 
+# Build the data structure library.
+# 
+target_link_libraries(${BIN_NAME} DS)
