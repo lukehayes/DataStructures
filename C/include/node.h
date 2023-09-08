@@ -5,12 +5,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-typedef struct node_t
-{
-    void* value;
-    struct node_t* next;
-
-} node_t;
+typedef struct ds_node_t node_t;
 
 /**
  * Create a new node_t with a specific value and set its

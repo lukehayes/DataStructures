@@ -1,6 +1,13 @@
 #include "node.h"
 #include <stdio.h>
 
+typedef struct ds_node_t
+{
+    void* value;
+    struct ds_node_t* next;
+} node_t;
+
+
 node_t* ds_list_create_node(void* value)
 {
     node_t* n = malloc(sizeof(node_t));
@@ -12,7 +19,7 @@ node_t* ds_list_create_node(void* value)
 
 void ds_list_connect_node(node_t* a, node_t* b)
 {
-    a->next = b;
+    a->next = b->next;
 }
 
 bool ds_list_node_null(node_t* n)
@@ -76,7 +83,6 @@ void ds_list_free(node_t* head)
     while(current != NULL)
     {
         node_t* prev_node = current;
-        ds_list_print_node(prev_node);
         current = current->next;
 
         free(prev_node);
