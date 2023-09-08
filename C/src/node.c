@@ -25,7 +25,7 @@ bool ds_list_node_not_null(node_t* n)
     return !ds_list_node_null(n);
 }
 
-int ds_list_node_list_size(node_t* head)
+int ds_list_size(node_t* head)
 {
     int index = 0;
 
@@ -85,24 +85,24 @@ void ds_list_push_back(node_t** head, void* value)
     }
 }
 
-void ds_list_free_list(node_t* head)
+void ds_list_free(node_t* head)
 {
-    int size = ds_list_node_list_size(head);
+    int size = ds_list_size(head);
     printf("Size: %i \n", size);
 
     // FIXME Segfault,crash, bang, wallop.
     for(int i = size; i >= 0; i--)
     {
         printf("I %i \n", i);
-        node_t* node = ds_list_get_node_at_index(head, i);
+        node_t* node = ds_list_node_at_index(head, i);
         ds_list_print_node(node);
     }
 }
 
-node_t* ds_list_get_node_at_index(node_t* head, int index)
+node_t* ds_list_node_at_index(node_t* head, int index)
 {
     // Bail out if the index is too large or too small.
-    if(index < 0 || index > ds_list_node_list_size(head)) return NULL;
+    if(index < 0 || index > ds_list_size(head)) return NULL;
 
     static int index_counter = 0;
     node_t* current_node = head;

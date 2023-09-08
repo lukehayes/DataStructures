@@ -57,7 +57,7 @@ bool ds_list_node_not_null(node_t* n);
  *
  * @return Size of the list.
  */
-int ds_list_node_list_size(node_t* head);
+int ds_list_size(node_t* head);
 
 /**
  * Add a node to the front of the list.
@@ -101,10 +101,17 @@ void ds_list_push_value(node_t* head, void* value);
  *
  * @return void.
  */
-node_t* ds_list_get_node_at_index(node_t* head, int index);
+node_t* ds_list_node_at_index(node_t* head, int index);
 
 
-void ds_list_free_list(node_t* head);
+/**
+ * Free the entire list from memory.
+ *
+ * @param node_t* head.
+ *
+ * @return void.
+ */
+void ds_list_free(node_t* head);
 
 /**
  * Print each node_t value until the end.
@@ -113,7 +120,7 @@ void ds_list_free_list(node_t* head);
  *
  * @return void.
  */
-void ds_list_print_node_list(node_t* head);
+void ds_list_print_list(node_t* head);
 
 /**
  * Print a single node_t value.
