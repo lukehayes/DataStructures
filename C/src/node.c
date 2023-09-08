@@ -104,8 +104,6 @@ node_t* get_node_at_index(node_t* head, int index)
     // Bail out if the index is too large or too small.
     if(index < 0 || index > node_list_size(head)) return NULL;
 
-    printf("Here \n");
-
     static int index_counter = 0;
     node_t* current_node = head;
 
