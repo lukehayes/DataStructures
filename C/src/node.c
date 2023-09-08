@@ -109,7 +109,13 @@ node_t* ds_list_node_at_index(node_t* head, int index)
 
 void ds_list_print_node(node_t* node)
 {
-    printf("Node Address: %p Node Value: %i \n", node, node->value);
+    if(node)
+    {
+        printf("Node Address: %p Node Value: %i \n", node, node->value);
+    }else 
+    {
+        printf("Node NULL \n");
+    }
 }
 
 
