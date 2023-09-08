@@ -20,7 +20,7 @@ typedef struct node_t
  *
  * @return node_t*.
  */
-node_t* create_node(void* value);
+node_t* ds_list_create_node(void* value);
 
 /**
  * Connect a node_t to another node_t.
@@ -30,7 +30,7 @@ node_t* create_node(void* value);
  *
  * @return void.
  */
-void connect_node(node_t* a, node_t* b);
+void ds_list_connect_node(node_t* a, node_t* b);
 
 /**
  * Check if a node is equal to NULL.
@@ -39,7 +39,7 @@ void connect_node(node_t* a, node_t* b);
  *
  * @return int.
  */
-bool node_null(node_t* n);
+bool ds_list_node_null(node_t* n);
 
 /**
  * Check if a node is NOT equal to NULL.
@@ -48,7 +48,7 @@ bool node_null(node_t* n);
  *
  * @return int.
  */
-bool node_not_null(node_t* n);
+bool ds_list_node_not_null(node_t* n);
 
 /**
  * Get the size of the list.
@@ -57,7 +57,7 @@ bool node_not_null(node_t* n);
  *
  * @return Size of the list.
  */
-int node_list_size(node_t* head);
+int ds_list_node_list_size(node_t* head);
 
 /**
  * Add a node to the front of the list.
@@ -68,7 +68,7 @@ int node_list_size(node_t* head);
  *
  * @return void.
  */
-void push_front(node_t** head, void* value);
+void ds_list_push_front(node_t** head, void* value);
 
 /**
  * Push a node to the back of the list.
@@ -79,7 +79,7 @@ void push_front(node_t** head, void* value);
  *
  * @return void.
  */
-void push_back(node_t** head, void* value);
+void ds_list_push_back(node_t** head, void* value);
 
 /**
  * Add a node to the end of the list.
@@ -90,7 +90,7 @@ void push_back(node_t** head, void* value);
  *
  * @return void.
  */
-void push_value(node_t* head, void* value);
+void ds_list_push_value(node_t* head, void* value);
 
 /**
  * Get a node at a specific index if it exists.
@@ -101,10 +101,10 @@ void push_value(node_t* head, void* value);
  *
  * @return void.
  */
-node_t* get_node_at_index(node_t* head, int index);
+node_t* ds_list_get_node_at_index(node_t* head, int index);
 
 
-void free_list(node_t* head);
+void ds_list_free_list(node_t* head);
 
 /**
  * Print each node_t value until the end.
@@ -113,7 +113,7 @@ void free_list(node_t* head);
  *
  * @return void.
  */
-void print_node_list(node_t* head);
+void ds_list_print_node_list(node_t* head);
 
 /**
  * Print a single node_t value.
@@ -122,11 +122,11 @@ void print_node_list(node_t* head);
  *
  * @return void.
  */
-void print_node(node_t* node);
+void ds_list_print_node(node_t* node);
 
 /**
  * Print a specific node value.
  */
-static void print_node_value(node_t* node, int index);
+static void ds_list_print_node_value(node_t* node, int index);
 
 #endif //DS_NODE_H

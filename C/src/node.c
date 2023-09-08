@@ -1,7 +1,7 @@
 #include "node.h"
 #include <stdio.h>
 
-node_t* create_node(void* value)
+node_t* ds_list_create_node(void* value)
 {
     node_t* n = malloc(sizeof(node_t));
     n->value = value;
@@ -10,26 +10,26 @@ node_t* create_node(void* value)
     return n;
 }
 
-void connect_node(node_t* a, node_t* b)
+void ds_list_connect_node(node_t* a, node_t* b)
 {
     a->next = b;
 }
 
-bool node_null(node_t* n)
+bool ds_list_node_null(node_t* n)
 {
     return n == NULL ? true : false;
 }
 
-bool node_not_null(node_t* n)
+bool ds_list_node_not_null(node_t* n)
 {
-    return !node_null(n);
+    return !ds_list_node_null(n);
 }
 
-int node_list_size(node_t* head)
+int ds_list_node_list_size(node_t* head)
 {
     int index = 0;
 
-    if(node_null(head))
+    if(ds_list_node_null(head))
     {
         return index;
     }
@@ -46,30 +46,30 @@ int node_list_size(node_t* head)
     return index;
 }
 
-void push_front(node_t** head, void* value)
+void ds_list_push_front(node_t** head, void* value)
 {
     node_t* rest = *head;
-    node_t* new_node = create_node(value);
+    node_t* new_node = ds_list_create_node(value);
     new_node->next = rest;
     *head = new_node;
 }
 
-void push_value(node_t* head, void* value)
+void ds_list_push_value(node_t* head, void* value)
 {
     if(head == NULL)
     {
-        head = create_node((int*) value);
+        head = ds_list_create_node((int*) value);
     }else
     {
         while(head->next != NULL)
         {
             head = head->next;
         }
-        head->next= create_node((int*) value);
+        head->next= ds_list_create_node((int*) value);
     }
 }
 
-void push_back(node_t** head, void* value)
+void ds_list_push_back(node_t** head, void* value)
 {
     node_t* node = *head;
     
@@ -77,7 +77,7 @@ void push_back(node_t** head, void* value)
     {
         if(!node->next)
         {
-            node->next = create_node(value);
+            node->next = ds_list_create_node(value);
             return;
         }else {
             node = node->next;
@@ -85,24 +85,24 @@ void push_back(node_t** head, void* value)
     }
 }
 
-void free_list(node_t* head)
+void ds_list_free_list(node_t* head)
 {
-    int size = node_list_size(head);
+    int size = ds_list_node_list_size(head);
     printf("Size: %i \n", size);
 
     // FIXME Segfault,crash, bang, wallop.
     for(int i = size; i >= 0; i--)
     {
         printf("I %i \n", i);
-        node_t* node = get_node_at_index(head, i);
-        print_node(node);
+        node_t* node = ds_list_get_node_at_index(head, i);
+        ds_list_print_node(node);
     }
 }
 
-node_t* get_node_at_index(node_t* head, int index)
+node_t* ds_list_get_node_at_index(node_t* head, int index)
 {
     // Bail out if the index is too large or too small.
-    if(index < 0 || index > node_list_size(head)) return NULL;
+    if(index < 0 || index > ds_list_node_list_size(head)) return NULL;
 
     static int index_counter = 0;
     node_t* current_node = head;
@@ -112,7 +112,7 @@ node_t* get_node_at_index(node_t* head, int index)
     while(current_node)
     {
         current_node = current_node->next;
-        print_node(current_node);
+        ds_list_print_node(current_node);
         index_counter++;
 
         // Node has been found at the index given.
@@ -121,29 +121,29 @@ node_t* get_node_at_index(node_t* head, int index)
 }
 
 
-void print_node(node_t* node)
+void ds_list_print_node(node_t* node)
 {
     printf("Node Address: %p Node Value: %i \n", node, node->value);
 }
 
 
-static void print_node_value(node_t* node, int index)
+static void ds_list_print_node_value(node_t* node, int index)
 {
     printf("Node Value: %i at index[%i]\n", node->value, index);
 }
 
-void print_node_list(node_t* head)
+void ds_list_print_node_list(node_t* head)
 {
     int index = 0;
     if(head != NULL)
     {
-        print_node_value(head, index);
+        ds_list_print_node_value(head, index);
     }
 
     while(head->next != NULL)
     {
         head = head->next;
         index++;
-        print_node_value(head, index);
+        ds_list_print_node_value(head, index);
     }
 }
