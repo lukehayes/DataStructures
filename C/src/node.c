@@ -54,21 +54,6 @@ void ds_list_push_front(node_t** head, void* value)
     *head = new_node;
 }
 
-void ds_list_push_value(node_t* head, void* value)
-{
-    if(head == NULL)
-    {
-        head = ds_list_create_node((int*) value);
-    }else
-    {
-        while(head->next != NULL)
-        {
-            head = head->next;
-        }
-        head->next= ds_list_create_node((int*) value);
-    }
-}
-
 void ds_list_push_back(node_t** head, void* value)
 {
     node_t* node = *head;

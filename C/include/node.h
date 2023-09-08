@@ -82,17 +82,6 @@ void ds_list_push_front(node_t** head, void* value);
 void ds_list_push_back(node_t** head, void* value);
 
 /**
- * Add a node to the end of the list.
- *
- * @param node_t* head.
- *
- * @param void* value.
- *
- * @return void.
- */
-void ds_list_push_value(node_t* head, void* value);
-
-/**
  * Get a node at a specific index if it exists.
  *
  * @param node_t* head.
