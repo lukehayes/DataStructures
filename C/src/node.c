@@ -72,16 +72,17 @@ void ds_list_push_back(node_t** head, void* value)
 
 void ds_list_free(node_t* head)
 {
-    int size = ds_list_size(head);
-    printf("Size: %i \n", size);
-
-    // FIXME Segfault,crash, bang, wallop.
-    for(int i = size; i >= 0; i--)
+    node_t* current = head;
+    while(current != NULL)
     {
-        printf("I %i \n", i);
-        node_t* node = ds_list_node_at_index(head, i);
-        ds_list_print_node(node);
+        node_t* prev_node = current;
+        ds_list_print_node(prev_node);
+        current = current->next;
+
+        free(prev_node);
+        prev_node = NULL;
     }
+
 }
 
 node_t* ds_list_node_at_index(node_t* head, int index)
