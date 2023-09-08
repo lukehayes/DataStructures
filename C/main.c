@@ -4,24 +4,21 @@
 
 int main()
 {
-    node_t* head = create_node((int*)100);
-    push_value(head, (int*)200);
+    node_t* head = ds_list_create_node((int*)100);
+    ds_list_push_back(&head, (int*)200);
+    ds_list_push_back(&head, (int*)300);
+    ds_list_push_back(&head, (int*)400);
+    ds_list_push_back(&head, (int*)500);
 
-    push_front(&head, (int*)42);
-    push_front(&head, (int*)222);
-    push_front(&head, (int*)563);
+    int index = 4;
 
-    // for(int i = 1; i <= 6; ++i)
-    // {
-    //     push_value(head, (int*)(i*100));
-    // }
+    node_t* node = ds_list_node_at_index(head, 1);
 
-    push_value(head, (int*)(888));
-    
+    ds_list_print_node(node);
 
-    print_node_list(head);
+    ds_list_free(head);
 
-    free(head);
+    /*free(head);*/
 
     return 0;
 }
