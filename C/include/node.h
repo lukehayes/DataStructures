@@ -11,4 +11,6 @@ typedef struct ds_node_t
     struct ds_node_t* next;
 } node_t;
 
+void ds_node_print(node_t* node);
+
 #endif //DS_NODE_H
