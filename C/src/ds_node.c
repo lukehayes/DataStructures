@@ -1,4 +1,4 @@
-#include "node.h"
+#include "ds_node.h"
 #include <stdio.h>
 
 void ds_node_print(node_t* node)
