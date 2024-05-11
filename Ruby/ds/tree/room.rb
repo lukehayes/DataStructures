@@ -21,56 +21,31 @@ module DS
 
     def print_room(room, depth = 0)
 
-        puts "NW: #{room.north_west}"
-        puts "NE: #{room.north_east}"
-        puts "SW: #{room.south_west}"
-        puts "SE: #{room.south_east}"
-
-        print("Depth: #{depth}")
+        print("Depth: #{depth} \n")
         depth.times { print "\t" }
+        print "NW: #{room.north_west} \n"
+
+        # -------------------------------
+
+        depth.times { print "\t" }
+        print "NE: #{room.north_east} \n"
+
+        # -------------------------------
+
+        depth.times { print "\t" }
+        print "SW: #{room.south_west} \n"
+
+        # -------------------------------
+
+        depth.times { print "\t" }
+        print "SW: #{room.south_east} \n"
+
         print_room(room.north_west, depth + 1) unless room.north_west.nil?
-
-        print("Depth: #{depth}")
-        depth.times { print "\t" }
         print_room(room.north_east, depth + 1) unless room.north_east.nil?
-
-        print("Depth: #{depth}")
-        depth.times { print "\t" }
         print_room(room.south_west, depth + 1) unless room.south_west.nil?
-
-        print("Depth: #{depth}")
-        depth.times { print "\t" }
         print_room(room.south_east, depth + 1) unless room.south_east.nil?
-        #print_room(room.north_east, depth + 1)
-        #print_room(room.south_west, depth + 1)
-        #print_room(room.south,      depth + 1)
-    end
-
-    class << self
-
-      def print_tab(depth)
-        depth.times do
-          print "\t"
-          puts "Tab Depth #{depth}"
-        end
-      end
-
-      def print_room(room, depth)
-
-        #puts "NW: #{room.north_west}"
-        #puts "NE: #{room.north_east}"
-        #puts "SW: #{room.south_west}"
-        #puts "SE: #{room.south_east}"
-
-        self.print_room(room.north_west, depth + 1)
-        self.print_tab(depth+1)
-
-        #print_room(room.north_east, depth + 1)
-        #print_room(room.south_west, depth + 1)
-        #print_room(room.south_east, depth + 1)
-
-      end
 
     end
+
   end
 end
