@@ -5,8 +5,9 @@ module DS
   # balancing rules at all.
   #
   class Tree
-    attr_accessor :value, :next_tree
-    attr_reader :max_children
+    attr_accessor :value
+    attr_accessor :next_tree
+    attr_reader   :max_children
 
     def initialize()
       @values = []
