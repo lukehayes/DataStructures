@@ -18,22 +18,24 @@ class List:
             self.size += 1
         else:
             current = self.head.next_node
-            while(current):
-                print(current)
+            while(current != None):
                 current = current.next_node
+                print(current)
+            print("END LOOP Current ", current)
 
-            current = node
+            current = Node(value)
+            print("POST Current ", current)
             self.size += 1
 
     def print(self):
-
         if(self.head != None):
-            print(self.head)
-
-        current = self.head.next_node
-        while(current):
-            print(current.value)
-            current = current.next_node
+            print("ROOT:", self.head)
+        else:
+            current = self.head.next_node
+            print("Next")
+            while(current):
+                print(current.value)
+                current = current.next_node
 
     def __repr__(self):
         return f"List: {self.size} items"
@@ -44,8 +46,8 @@ a = Node(1)
 
 lst = List()
 
-for x in range(10):
-    lst.insert(x)
+lst.insert(1)
+lst.insert(10)
+lst.insert(100)
 
 lst.print()
-
